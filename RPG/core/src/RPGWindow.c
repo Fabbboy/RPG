@@ -11,6 +11,10 @@ void closeWindow(struct RPGWindow* window){
     window->state = STATE_EXIT;
 };
 
+void clearWindow(struct RPGWindow* window){
+    memset(window->buffer, 0, window->width * window->height * sizeof(uint32_t));
+};
+
 /*
 void setResizeCallback(struct RPGWindow* window, void (*callback)(struct RPGWindow* window, uint32_t width, uint32_t height)){
     mfb_resize_func resize = (mfb_resize_func) callback;
@@ -41,6 +45,7 @@ RPGWindow* CreateRPGWindow(uint32_t width, uint32_t height, const char* title, W
     window->close = closeWindow;
     //window->setResizeCallback = setResizeCallback;
     window->setCloseCallback = setCloseCallback;
+    window->clear = clearWindow;
 
     return window;
 };

@@ -13,7 +13,7 @@ if (APPLE)
     find_library(QUARTZCORE_LIBRARY QuartzCore)
 endif ()
 
-add_executable(RPG main.c RPG/core/RPGWindow.h RPG/core/src/RPGWindow.c RPG/core/RPGHints.h RPG/Global.h RPG/Input/RPGInput.h RPG/Input/src/RPGInput.c RPG/Input/InputEnums.h)
+add_executable(RPG main.c RPG/core/RPGWindow.h RPG/core/src/RPGWindow.c RPG/core/RPGHints.h RPG/Global.h RPG/Input/RPGInput.h RPG/Input/src/RPGInput.c RPG/Input/InputEnums.h RPG/core/renderer/RPGRenderer.h RPG/core/renderer/Pixel.h RPG/core/renderer/src/Pixel.c RPG/core/renderer/src/RGBRenderer.c)
 target_link_libraries(RPG ${CMAKE_SOURCE_DIR}/minifb/lib/libminifb.a)
 
 # Link necessary frameworks if building on macOS

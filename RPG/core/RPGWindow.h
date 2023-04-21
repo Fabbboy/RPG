@@ -17,6 +17,7 @@ typedef struct RPGWindow{
     //Window control
     WindowStates (*update)(struct RPGWindow* window);
     void (*close)(struct RPGWindow* window);
+    void (*clear)(struct RPGWindow* window);
 
     //callbacks
     //void (*setResizeCallback)(struct RPGWindow* window, void (*callback)(struct RPGWindow* window, uint32_t width, uint32_t height));
